@@ -21,7 +21,6 @@ public class Proyecto {
     public Proyecto() {
     }
 
-    
     public Proyecto(String nombreProy, String descripcionProy, String imgProy) {
         this.nombreProy = nombreProy;
         this.descripcionProy = descripcionProy;

@@ -17,12 +17,13 @@ public class DtoProyecto {
     public DtoProyecto() {
     }
 
-    
     public DtoProyecto(String nombreProy, String descripcionProy, String imgProy) {
         this.nombreProy = nombreProy;
         this.descripcionProy = descripcionProy;
         this.imgProy = imgProy;
     }
+
+    
     
     
 }

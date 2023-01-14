@@ -80,7 +80,7 @@ public class CHys {
         if(!sHys.existsById(id)) {
             return new ResponseEntity(new Mensaje("La skill no existe"), HttpStatus.BAD_REQUEST);
         }
-        if(!sHys.existsByNombreHys(dtoHys.getNombreHys()) && 
+        if(sHys.existsByNombreHys(dtoHys.getNombreHys()) && 
                 sHys.getByNombreHys(dtoHys.getNombreHys()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Ya existe una skill con ese nombre"), HttpStatus.BAD_REQUEST);
         }

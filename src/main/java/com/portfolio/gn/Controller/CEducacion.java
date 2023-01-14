@@ -80,7 +80,7 @@ public class CEducacion {
         if(!sEducacion.existsById(id)) {
             return new ResponseEntity(new Mensaje("El registro no existe"), HttpStatus.BAD_REQUEST);
         }
-        if(!sEducacion.existsByNombreEduc(dtoEducacion.getNombreEduc()) && sEducacion.getByNombreEduc(dtoEducacion.getNombreEduc()).get().getId() != id) {
+        if(sEducacion.existsByNombreEduc(dtoEducacion.getNombreEduc()) && sEducacion.getByNombreEduc(dtoEducacion.getNombreEduc()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Ya existe una educación con ese nombre"), HttpStatus.BAD_REQUEST);
         }
         

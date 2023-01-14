@@ -24,8 +24,8 @@ public class ImpPersonaService {
         return ipersonaRepository.findById(id);
     }
     
-    public Optional<Persona> getByNombre(String nombreE){
-        return ipersonaRepository.findByNombre(nombreE);
+    public Optional<Persona> getByNombre(String nombre){
+        return ipersonaRepository.findByNombre(nombre);
     }
     
     public void save(Persona exp) {

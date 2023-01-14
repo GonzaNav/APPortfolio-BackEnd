@@ -63,9 +63,9 @@ public class CProyecto {
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DtoProyecto dtoProyecto) {
         if(!sProyecto.existsById(id)) {
-            return new ResponseEntity(new Mensaje("El Proyecto no existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("El proyecto no existe"), HttpStatus.BAD_REQUEST);
         }
-        if(!sProyecto.existsByNombreProy(dtoProyecto.getNombreProy()) && sProyecto.getByNombreProy(dtoProyecto.getNombreProy()).get().getId() != id) {
+        if(sProyecto.existsByNombreProy(dtoProyecto.getNombreProy()) && sProyecto.getByNombreProy(dtoProyecto.getNombreProy()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Ya existe un proyecto con ese nombre"), HttpStatus.BAD_REQUEST);
         }
         
@@ -77,6 +77,7 @@ public class CProyecto {
         
         proyecto.setNombreProy(dtoProyecto.getNombreProy());
         proyecto.setDescripcionProy(dtoProyecto.getDescripcionProy());
+        proyecto.setImgProy(dtoProyecto.getImgProy());
         sProyecto.save(proyecto);
         
         return new ResponseEntity(new Mensaje("Proyecto actualizado"), HttpStatus.OK);

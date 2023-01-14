@@ -79,7 +79,7 @@ public class PersonaController {
         if(!sPersona.existsById(id)) {
             return new ResponseEntity(new Mensaje("El registro no existe"), HttpStatus.BAD_REQUEST);
         }
-        if(!sPersona.existsByNombre(dtoPersona.getNombre()) && sPersona.getByNombre(dtoPersona.getNombre()).get().getId() != id) {
+        if(sPersona.existsByNombre(dtoPersona.getNombre()) && sPersona.getByNombre(dtoPersona.getNombre()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Ya existe una persona con ese nombre"), HttpStatus.BAD_REQUEST);
         }
         
@@ -91,6 +91,8 @@ public class PersonaController {
         
         persona.setNombre(dtoPersona.getNombre());
         persona.setApellido(dtoPersona.getApellido());
+        persona.setDescripcion(dtoPersona.getDescripcion());
+        persona.setImg(dtoPersona.getImg());
         sPersona.save(persona);
         
         return new ResponseEntity(new Mensaje("Persona actualizada"), HttpStatus.OK);

@@ -65,7 +65,7 @@ public class CExperiencia {
         if(!sExperiencia.existsById(id)) {
             return new ResponseEntity(new Mensaje("La experiencia no existe"), HttpStatus.BAD_REQUEST);
         }
-        if(!sExperiencia.existsByNombreE(dtoExp.getNombreExp()) && sExperiencia.getByNombreE(dtoExp.getNombreExp()).get().getId() != id) {
+        if(sExperiencia.existsByNombreE(dtoExp.getNombreExp()) && sExperiencia.getByNombreE(dtoExp.getNombreExp()).get().getId() != id) {
             return new ResponseEntity(new Mensaje("Ya existe una experiencia con ese nombre"), HttpStatus.BAD_REQUEST);
         }
         
