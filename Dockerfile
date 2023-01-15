@@ -1,5 +1,5 @@
-FROM amazoncorretto:8-alpine-jdk
+FROM amazoncorretto:19
 
-COPY target/gn-0.0.1-SNAPSHOT gn.jar
+COPY target/gn-0.0.1-SNAPSHOT gn-0.0.1-SNAPSHOT
 
-ENTRYPOINT ["java","-jar","/gn.jar"]
+ENTRYPOINT ["java","-jar","/gn-0.0.1-SNAPSHOT"]
