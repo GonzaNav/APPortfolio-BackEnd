@@ -93,6 +93,7 @@ public class CHys {
         
         hys.setNombreHys(dtoHys.getNombreHys());
         hys.setPorcentajeHys(dtoHys.getPorcentajeHys());
+        hys.setTipo(dtoHys.getTipo());
         sHys.save(hys);
         
         return new ResponseEntity(new Mensaje("Skill actualizada"), HttpStatus.OK);
