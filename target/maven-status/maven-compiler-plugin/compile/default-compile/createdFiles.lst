@@ -6,6 +6,7 @@ com\portfolio\gn\Security\Dto\NuevoUsuario.class
 com\portfolio\gn\Dto\DtoHys.class
 com\portfolio\gn\Security\Entity\Usuario.class
 com\portfolio\gn\Entity\Hys.class
+com\portfolio\gn\WebConfig.class
 com\portfolio\gn\Dto\DtoExperiencia.class
 com\portfolio\gn\Entity\Educacion.class
 com\portfolio\gn\Dto\DtoProyecto.class
